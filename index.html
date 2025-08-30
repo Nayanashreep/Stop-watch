@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stopwatch</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" aria-labelledby="title">
+    <h1 id="title">⏱ Interactive Stopwatch</h1>
+
+    <div class="display" aria-live="polite" aria-atomic="true">
+      <span id="time">00:00:00.00</span>
+    </div>
+
+    <div class="controls" role="group" aria-label="Stopwatch controls">
+      <button id="startPause" class="btn primary" aria-pressed="false">Start</button>
+      <button id="lap" class="btn" disabled>Lap</button>
+      <button id="reset" class="btn danger" disabled>Reset</button>
+      <button id="clearLaps" class="btn ghost" disabled>Clear Laps</button>
+    </div>
+
+    <div class="hint">
+      <strong>Shortcuts:</strong> Space = Start/Pause • L = Lap • R = Reset
+    </div>
+
+    <section class="laps">
+      <h2>Lap Times</h2>
+      <div class="tableWrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Total</th>
+              <th>Split</th>
+            </tr>
+          </thead>
+          <tbody id="lapsBody">
+            <!-- rows inserted dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
